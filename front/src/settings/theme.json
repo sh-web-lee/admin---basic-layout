@@ -1,0 +1,10 @@
+{
+  "themeColor": "#1570FF",
+  "otherColor": {
+    "info": "#0099ad",
+    "success": "#52c41a",
+    "warning": "#faad14",
+    "error": "#f5222d"
+  },
+  "isCustomizeInfoColor": false
+}
