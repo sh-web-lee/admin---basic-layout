@@ -1,6 +1,6 @@
 <template>
   <div class="text-primary wh-full">
-    LOGIN
+    LOGIN PAGE.
   </div>
 </template>
 <script lang="ts" setup>
