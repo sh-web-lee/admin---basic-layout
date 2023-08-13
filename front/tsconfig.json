@@ -17,7 +17,7 @@
       "~/*": ["./*"],
       "@/*": ["./src/*"]
     },
-    "types": ["naive-ui/volar"]
+    "types": ["vite/client", "node", "naive-ui/volar"]
     // "types": ["vite/client", "node", "unplugin-icons/types/vue", "naive-ui/volar", "unplugin-vue-macros/macros-global"]
   },
   "exclude": ["node_modules", "dist"]

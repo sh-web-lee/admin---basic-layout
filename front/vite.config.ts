@@ -9,6 +9,7 @@ export default defineConfig(configEnv => {
   const srcPath = getSrcPath();
 
   return {
+    base: './',
     plugins: setupVitePlugin(viteEnv),
     resolve: {
       alias: {

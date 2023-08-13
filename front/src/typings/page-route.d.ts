@@ -9,7 +9,7 @@ declare namespace PageRoute {
    * the not found route, which catch the invalid route path
    * @translate 未找到路由(捕获无效路径的路由)
   */
-  // type NotFoundRouteKey = 'not-found'
+  type NotFoundRouteKey = 'not-found'
 
 
   /**
@@ -18,11 +18,22 @@ declare namespace PageRoute {
   */
   type RouteKey = 
     | '403'
+    | '404'
     | 'login'
+    | 'not-found'
+    | 'dashboard'
+    | 'dashboard_analysis'
+    | 'dashboard_workbench'
+    | 'userinfo'
 
 
   type LastDegreeRouteKey = Extract<RouteKey,
     | '403'
+    | '404'
     | 'login'
+    | 'not-found'
+    | 'dashboard_analysis'
+    | 'dashboard_workbench'
+    | 'userinfo'
   >
 }

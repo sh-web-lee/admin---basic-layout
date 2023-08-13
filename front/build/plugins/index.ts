@@ -7,7 +7,7 @@ import unplugin from './unplugin';
 
 
 export function setupVitePlugin(viteEnv: ImportMetaEnv) {
-  const plugins = [vue(), html(viteEnv), UnoCSS(), ...unplugin()];
+  const plugins = [vue(), html(viteEnv), UnoCSS(), ...unplugin(viteEnv)];
 
   return plugins;
 }

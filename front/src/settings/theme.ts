@@ -1,7 +1,8 @@
+import { EnumThemeAnimateMode } from '../enum';
 import jsonSetting from './theme.json'
 
 const themeColorList = [
-  '#1570FF',
+  '#9333EA',
   '#9DDEF4',
   '#C2A5F9',
   '#FFB3DA',
@@ -18,7 +19,27 @@ const defaultThemeSetting: Theme.Setting = {
     warning: '#faad14',
     error: '#f5222d'
   },
-  isCustomizeInfoColor: false
+  isCustomizeInfoColor: false,
+  darkMode: false,
+  header: {
+    inverted: false,
+    height: 56
+  },
+  layout: {
+    minWidth: 900
+  },
+  page: {
+    animate: true,
+    animteMode: 'fade-slide',
+    animateModeList: [
+      { value: 'fade-slide', label: EnumThemeAnimateMode['fade-slide'] },
+      { value: 'fade', label: EnumThemeAnimateMode['fade'] },
+      { value: 'fade-bottom', label: EnumThemeAnimateMode['fade-bottom'] },
+      { value: 'fade-scale', label: EnumThemeAnimateMode['fade-scale'] },
+      { value: 'zoom-fade', label: EnumThemeAnimateMode['zoom-fade'] },
+      { value: 'zoom-out', label: EnumThemeAnimateMode['zoom-out'] }
+    ]
+  }
 }
 
 

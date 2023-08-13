@@ -4,5 +4,9 @@ declare namespace StorageInterface {
   interface Local {
     /** 主题色 */
     themeColor: string;
+    /** token */
+    token: string;
+    /** 用户信息 */
+    userInfo: Auth.UserInfo;
   }
 }

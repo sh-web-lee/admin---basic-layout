@@ -1,6 +1,7 @@
 import { views } from '@/views'
 import { RouteComponent } from 'vue-router'
 import { isFunction } from '../common';
+import { BasicLayout, BlankLayout } from '~/src/layouts';
 
 type Lazy<T> = () => Promise<T>;
 
@@ -8,6 +9,19 @@ interface ModuleComponent {
   default: RouteComponent;
 }
 
+type LayoutComponent = Record<EnumType.LayoutComponentName, Lazy<ModuleComponent>>;
+
+/**
+ * 获取布局的vue文件（懒加载方式）
+ * @param layoutType - 布局类型
+ */
+export function getLayoutComponent(layoutType: EnumType.LayoutComponentName) {
+  const layoutComponent: LayoutComponent = {
+    basic: BasicLayout,
+    blank: BlankLayout
+  }
+  return layoutComponent[layoutType];
+}
 
 /**
  * 获取页面导入的vue文件

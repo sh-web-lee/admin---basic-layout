@@ -6,7 +6,7 @@ import { setupRouter } from './router';
 import { setupStore } from './store';
 
 
-function setupApp() {
+async function setupApp() {
   setupAssets();
 
   const apploading = createApp(AppLoading)
@@ -16,9 +16,11 @@ function setupApp() {
     
   const app = createApp(App);
 
+  // pinia
   setupStore(app)
 
-  setupRouter(app)
+  // vue router
+  await setupRouter(app)
 
 
 

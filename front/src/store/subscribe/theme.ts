@@ -3,6 +3,7 @@ import { effectScope, watch } from "vue";
 import { kebabCase } from 'lodash-es'
 import { useThemeStore } from "../modules";
 import { localStg } from '~/src/utils';
+import { useElementSize } from '@vueuse/core';
 
 
 
@@ -10,7 +11,7 @@ import { localStg } from '~/src/utils';
 /** 订阅theme store */
 export default function subscribeThemeStore() {
   const theme = useThemeStore();
-
+  const { width } = useElementSize(document.documentElement)
   const scope = effectScope();
 
   scope.run(() => {
@@ -34,6 +35,15 @@ export default function subscribeThemeStore() {
       },
       { immediate: true }
     )
+
+    // 禁用横向滚动(页面切换时,过渡动画会产生水平方向的滚动条, 小于最小宽度时，不禁止)
+    watch(width, newValue => {
+      if (newValue < theme.layout.minWidth) {
+        document.documentElement.style.overflowX = 'auto';
+      } else {
+        document.documentElement.style.overflowX = 'hidden';
+      }
+    });
   })
 }
 

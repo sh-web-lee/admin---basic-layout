@@ -4,7 +4,7 @@ import type { PluginOption } from 'vite'
 export default (viteEnv: ImportMetaEnv): PluginOption[] => {
   return createHtmlPlugin({
     minify: true,
-    entry: 'src/main.ts',
+    // entry: 'src/main.ts',
     inject: {
       data: {
         appName: viteEnv.VITE_APP_NAME,

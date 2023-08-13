@@ -1,7 +1,5 @@
 <template>
-  <div class="">
-    403
-  </div>
+  <exception-base type="403" />
 </template>
 <script lang="ts" setup>
 

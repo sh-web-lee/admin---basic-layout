@@ -1,2 +1,6 @@
 export * from './component'
 export * from './transform'
+export * from './module'
+export * from './auth'
+export * from './helper'
+export * from './menu'
